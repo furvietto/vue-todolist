@@ -32,7 +32,8 @@
                 
                 <div v-for="(item,index) in todos" :key="index" :class="(item.done == true) ? 'line' : '' " class="todo">
                     <input :checked="item.done" @click="ischecked(index)" type="checkbox">
-                    <div>{{item.text}}</div>     
+                    <div>{{item.text}}</div>
+                    <i @click="isDelete(index)" class="fas fa-trash-alt"></i>     
                 </div>
                 
             </main>

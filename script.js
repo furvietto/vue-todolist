@@ -21,7 +21,7 @@ const todo = new Vue({
         testo: "",
         todos:[
             {
-                text: "ciao",
+                text: "comprare il latte",
                 done:false
             },
         ]
@@ -37,6 +37,9 @@ const todo = new Vue({
         },
         ischecked: function (index) {
            this.todos[index].done = !this.todos[index].done
+        },
+        isDelete: function () {
+            
         }
     },
 })
