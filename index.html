@@ -10,22 +10,31 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
+    <div id="app" class="container">
         <div class="innerContainer">
             <header>
                 <h1>To Do list</h1>
                 <div class="input">
-                    
+                    <input class="text" v-model="testo" type="text" placeholder="inserisci la tua todo">
+                    <i @click="obj" class="fas fa-plus-circle"></i>
                 </div>
             </header>
 
             <main>
-                array
+                
+                <div v-for="(item,index) in todos" :key="index" :class="(item.done == true) ? 'line' : '' " class="todo">
+                    <input :checked="item.done" @click="ischecked(index)" type="checkbox">
+                    <div>{{item.text}}</div>     
+                </div>
+                
             </main>
         </div>
     </div>

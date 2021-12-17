@@ -14,3 +14,29 @@
 // 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 // 2- cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 // Io sarò qui fino alle 13.00 per eventuali hotwell.
+
+const todo = new Vue({
+    el:"#app",
+    data:{
+        testo: "",
+        todos:[
+            {
+                text: "ciao",
+                done:false
+            },
+        ]
+    },
+    methods: {
+        obj: function () {
+            let object = {
+                text: this.testo,
+                done:false
+            }
+            this.todos.unshift(object)
+            this.testo = ''
+        },
+        ischecked: function (index) {
+           this.todos[index].done = !this.todos[index].done
+        }
+    },
+})
