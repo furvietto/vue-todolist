@@ -19,27 +19,31 @@ const todo = new Vue({
     el:"#app",
     data:{
         testo: "",
-        todos:[
-            {
-                text: "comprare il latte",
-                done:false
-            },
-        ]
+        todos:[]
     },
     methods: {
         obj: function () {
-            let object = {
-                text: this.testo,
-                done:false
+            if (this.testo != '') {
+                let object = {
+                    text: this.testo,
+                    done:false
+                }   
+                this.todos.unshift(object)
+                this.testo = ''
             }
-            this.todos.unshift(object)
-            this.testo = ''
         },
         ischecked: function (index) {
            this.todos[index].done = !this.todos[index].done
         },
-        isDelete: function () {
-            
+        isDelete: function (index) {
+            this.todos.splice(index,1)
         }
+    },
+
+    created() {
+        this.todos = [{
+            text: "comprare il latte",
+            done:false
+        }]
     },
 })

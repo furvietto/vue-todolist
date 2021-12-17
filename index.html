@@ -23,13 +23,12 @@
             <header>
                 <h1>To Do list</h1>
                 <div class="input">
-                    <input class="text" v-model="testo" type="text" placeholder="inserisci la tua todo">
+                    <input @keyup.enter="obj" class="text" v-model="testo" type="text" placeholder="inserisci la tua todo">
                     <i @click="obj" class="fas fa-plus-circle"></i>
                 </div>
             </header>
 
             <main>
-                
                 <div v-for="(item,index) in todos" :key="index" :class="(item.done == true) ? 'line' : '' " class="todo">
                     <input :checked="item.done" @click="ischecked(index)" type="checkbox">
                     <div>{{item.text}}</div>
