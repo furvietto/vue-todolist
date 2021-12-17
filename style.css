@@ -4,3 +4,22 @@
     box-sizing: border-box;
  }
 
+ html {
+    font-family: 'Corinthia', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+ }
+
+ .container {
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .innerContainer {
+    width: 30%;
+    height: 80vh;
+    border-radius: 20px;
+    background-color: aqua;
+ }
